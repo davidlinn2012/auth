@@ -1,7 +1,10 @@
 Auth::Application.routes.draw do
 
-  resource :users
+  root :to => 'users#index'
   match '/signup', to: 'users#new'
+  match '/users/index', to: 'users#index'
+  match '/users/:id', to: 'users#show'
+  resource :users
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

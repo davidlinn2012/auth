@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 			render 'show'
 	 	else
 	 		flash[:notice] = "Error creating user"
-	 		render 'signup'
+	 		render 'new'
 	 	end
 	end
 

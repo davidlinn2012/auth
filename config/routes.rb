@@ -1,10 +1,15 @@
 Auth::Application.routes.draw do
 
-  root :to => 'users#index'
+  root :to => 'sessions#new'
   match '/signup', to: 'users#new'
   match '/users/index', to: 'users#index'
   match '/users/:id', to: 'users#show'
   resource :users
+
+  match '/login', to: 'sessions#new'
+  match '/logout', to: 'sessions#destroy'
+  resource :sessions, :only => [:new, :create, :destroy]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

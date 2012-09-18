@@ -3,11 +3,11 @@ class SessionsController < ApplicationController
 	end
 	
 	def create
-		user = User.authenticate(params[:name], params[:password])
-		if user
-			session[:user_id] = user.name
-			flash[:notice] = "Welcome #{user.name}"
-			redirect_to users_index_path
+		@user = User.authenticate(params[:name], params[:password])
+		if @user
+			session[:user_name] = @user.name
+			flash[:notice] = "Welcome #{@user.name}"
+			redirect_to user_name_path(@user.name)
 		else
 			flash[:notice] = "Invalid username password combo"
 			render 'new'

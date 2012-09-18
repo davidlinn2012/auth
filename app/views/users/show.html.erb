@@ -1,2 +1,10 @@
+<% if current_user %>
+<p> 
+	You are currently logged in. 
+	<%= link_to "Logout", logout_path %>
+</p>
+<% end %>
+
+<br/>
 User name: <%= @user.name %> <br/>
 Password: <%= @user.password %> <br/>

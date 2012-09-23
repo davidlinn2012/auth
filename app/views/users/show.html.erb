@@ -6,4 +6,12 @@
 <% end %>
 
 <br/>
+<%= form_for Tweet.new do |f| %>
+	<%= f.text_area :message %>
+	<%= f.submit "Post" %>
+<% end %>
+
 <%= @user.name %>'s tweets <br/>
+<% @user.tweets.each do |tweet| %>
+	<%= tweet %>
+<% end %>

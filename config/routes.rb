@@ -9,6 +9,7 @@ Auth::Application.routes.draw do
   match '/logout', to: 'sessions#destroy'
   resource :sessions, :only => [:create]
   match '/:name', to: 'users#show', as: 'user_name'
+  resource :tweets, :only => [:create, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,10 +1,9 @@
 <% if current_user %>
 <p> 
-	You are currently logged in. 
+	You are currently logged in as <b><%= current_user.name %></b>. 
 	<%= link_to "Logout", logout_path %>
 </p>
 <% end %>
 
 <br/>
-User name: <%= @user.name %> <br/>
-Password: <%= @user.password %> <br/>
+<%= @user.name %>'s tweets <br/>

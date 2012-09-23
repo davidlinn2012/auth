@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 	 	@user = User.new(params[:user])
 	 	if @user.save
 	 		flash[:notice] = "User successfully created"
-			render 'show'
+			redirect_to user_name_path(@user.name)
 	 	else
 	 		flash[:notice] = "Error creating user"
 	 		render 'new'

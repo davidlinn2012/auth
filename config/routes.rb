@@ -2,13 +2,13 @@ Auth::Application.routes.draw do
 
   root :to => 'sessions#new'
   match '/signup', to: 'users#new'
-  match '/users', to: 'users#index'
-  match '/users/:name', to: 'users#show', as: 'user_name'
+  match '/list', to: 'users#index'
   resource :users, :except => [:new, :show]
 
   match '/login', to: 'sessions#new'
   match '/logout', to: 'sessions#destroy'
   resource :sessions, :only => [:create]
+  match '/:name', to: 'users#show', as: 'user_name'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

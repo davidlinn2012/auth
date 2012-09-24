@@ -6,12 +6,14 @@
 <% end %>
 
 <br/>
-<%= form_for Tweet.new do |f| %>
-	<%= f.text_area :message %>
-	<%= f.submit "Post" %>
+<% if current_user && current_user.name == @user.name%>
+	<%= form_for([@user, Tweet.new], :url => users_tweets_path) do |f| %>
+		<%= f.text_area :message %>
+		<%= f.submit "Post" %>
+	<% end %>
 <% end %>
 
 <%= @user.name %>'s tweets <br/>
 <% @user.tweets.each do |tweet| %>
-	<%= tweet %>
+	<br> <%= tweet.message %> <br/>
 <% end %>

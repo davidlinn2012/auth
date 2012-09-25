@@ -7,7 +7,7 @@ class TweetsController < ApplicationController
 			flash[:notice] = "Tweet saved"
 			redirect_to user_name_path(current_user.name)
 		else
-			flash[:notice] = "Unable to save tweet"
+			flash[:error] = "Unable to save tweet"
 			redirect_to user_name_path(current_user.name)
 		end
 	end

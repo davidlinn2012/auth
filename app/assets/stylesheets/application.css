@@ -11,3 +11,21 @@
  *= require_self
  *= require_tree .
  */
+
+.error {
+ 	border: 1px solid #F00;
+	background-color: #F00;
+	padding-left: 5px;
+ }
+ 
+.notice {
+ 	border: 1px solid #0F0;
+	background-color: #0F0;
+	padding-left: 5px;
+ }
+
+.debug_dump {
+ 	border: 1px solid #666;
+	background-color: #666;
+	padding-left: 5px;
+}

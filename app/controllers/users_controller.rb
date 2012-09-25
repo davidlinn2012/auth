@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 	 		flash[:notice] = "User successfully created"
 			redirect_to user_name_path(@user.name)
 	 	else
-	 		flash[:notice] = "Error creating user"
+	 		flash[:error] = "Error creating user"
 	 		render 'new'
 	 	end
 	end

@@ -7,8 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= flash[:error] %> <br/>
-<%= flash[:notice] %> <br/>
+<% flash.each do |key, message| %>
+	<div class="<%= key %>">
+		<%= message %>
+	</div>
+<% end %>
 <%= yield %>
 <%= debug params %>
 </body>

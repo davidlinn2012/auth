@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 			flash[:notice] = "Welcome #{@user.name}"
 			redirect_to user_name_path(@user.name)
 		else
-			flash[:notice] = "Invalid username password combo"
+			flash[:error] = "Invalid username password combo"
 			render 'new'
 		end
 	end

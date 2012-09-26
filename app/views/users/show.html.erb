@@ -13,9 +13,6 @@
 	<% end %>
 <% end %>
 
+<% @tweets = @user.tweets %>
 <%= @user.name %>'s tweets <br/>
-<ul>
-<% @user.tweets.each do |tweet| %>
-	<li> <%= tweet.message %> </li>
-<% end %>
-</ul>
+<%= render :partial => 'tweets/show', :tweets => @tweets  %>
